@@ -11,6 +11,8 @@ public class Movement : MonoBehaviour {
 	public float accelRate = 2f;
 	public float accel;
 
+	public bool move = true;
+
 	Vector2 screenCenter;
 	float maxSDisp;
 
@@ -26,13 +28,20 @@ public class Movement : MonoBehaviour {
 
 	void FixedUpdate () {
 		// Pitch/roll/yaw rotation
-		float angle = Mathf.Atan2(screenCenter.y-Input.mousePosition.y,screenCenter.x-Input.mousePosition.x);
-		float rotSpeed = maxRotSpeed*(Vector2.Distance(screenCenter, new Vector2(Input.mousePosition.x, Input.mousePosition.y))/maxSDisp);
-		Vector3 desRot = new Vector3(rotSpeed*Mathf.Sin(angle), -rotSpeed*Mathf.Cos(angle),0);
-		rb.AddRelativeTorque(desRot);
-		float disp = Vector2.Distance(screenCenter, new Vector2(Input.mousePosition.x, Input.mousePosition.y));
-		if (Mathf.Abs(disp) < 100) { disp = 0; }
-		rb.angularVelocity = new Vector3(rb.angularVelocity.normalized.x, rb.angularVelocity.normalized.y, 0) * Mathf.Lerp(0, maxRotSpeed, disp) + new Vector3(0,0,Input.GetAxis("Roll"));
+		if (move) {
+			float angle = Mathf.Atan2(screenCenter.y-Input.mousePosition.y,screenCenter.x-Input.mousePosition.x);
+			float rotSpeed = maxRotSpeed*(Vector2.Distance(screenCenter, new Vector2(Input.mousePosition.x, Input.mousePosition.y))/maxSDisp);
+			Vector3 desRot = new Vector3(rotSpeed*Mathf.Sin(angle), -rotSpeed*Mathf.Cos(angle),0);
+			rb.AddRelativeTorque(desRot);
+			float disp = Vector2.Distance(screenCenter, new Vector2(Input.mousePosition.x, Input.mousePosition.y));
+			if (Mathf.Abs(disp) < 100) { disp = 0; }
+			rb.angularVelocity = new Vector3(rb.angularVelocity.normalized.x, rb.angularVelocity.normalized.y, 0) * Mathf.Lerp(0, maxRotSpeed, disp) + new Vector3(0,0,Input.GetAxis("Roll"));
+		} else {
+			rb.angularVelocity = new Vector3(0,0,Input.GetAxis("Roll"));
+		}
+		if (Input.GetKeyDown("space")) {
+			move = !move;
+		}
 		// Forward/reverse thrust
 		accel += Input.GetAxis("Thrust") * accelRate;
 		accel = Mathf.Clamp(accel, minAccel, maxAccel);
