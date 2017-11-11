@@ -19,6 +19,8 @@ public class Movement : MonoBehaviour {
 	public float maxSpeed = 10f;
 	public float maxRotSpeed = 15f;
 
+	public GameObject holder;
+
 	void Start () {
 		Cursor.lockState = CursorLockMode.Confined;
 		rb = gameObject.GetComponent<Rigidbody>();
@@ -28,15 +30,21 @@ public class Movement : MonoBehaviour {
 
 	void FixedUpdate () {
 		// Pitch/roll/yaw rotation
+		float angle = Mathf.Atan2(screenCenter.y-Input.mousePosition.y,screenCenter.x-Input.mousePosition.x);
 		if (move) {
-			float angle = Mathf.Atan2(screenCenter.y-Input.mousePosition.y,screenCenter.x-Input.mousePosition.x);
 			float rotSpeed = maxRotSpeed*(Vector2.Distance(screenCenter, new Vector2(Input.mousePosition.x, Input.mousePosition.y))/maxSDisp);
 			Vector3 desRot = new Vector3(rotSpeed*Mathf.Sin(angle), -rotSpeed*Mathf.Cos(angle),0);
 			rb.AddRelativeTorque(desRot);
 			float disp = Vector2.Distance(screenCenter, new Vector2(Input.mousePosition.x, Input.mousePosition.y));
-			if (Mathf.Abs(disp) < 100) { disp = 0; }
+			if (Mathf.Abs(disp) < 50) { disp = 0; }
 			rb.angularVelocity = new Vector3(rb.angularVelocity.normalized.x, rb.angularVelocity.normalized.y, 0) * Mathf.Lerp(0, maxRotSpeed, disp) + new Vector3(0,0,Input.GetAxis("Roll"));
+			holder.transform.localRotation = Quaternion.Euler(new Vector3(0,0,0));
 		} else {
+			float rotSpeed = maxRotSpeed*(Vector2.Distance(screenCenter, new Vector2(Input.mousePosition.x, Input.mousePosition.y))/maxSDisp);
+			Vector3 desRot = new Vector3(rotSpeed*Mathf.Sin(angle), -rotSpeed*Mathf.Cos(angle),0);
+			float disp = Vector2.Distance(screenCenter, new Vector2(Input.mousePosition.x, Input.mousePosition.y));
+			if (Mathf.Abs(disp) < 50) { disp = 0; }
+			holder.transform.localRotation = Quaternion.Euler(holder.transform.localRotation.eulerAngles + (desRot * Mathf.Lerp(0, maxRotSpeed, disp)));
 			rb.angularVelocity = new Vector3(0,0,Input.GetAxis("Roll"));
 		}
 		if (Input.GetKeyDown("space")) {
