@@ -27,7 +27,7 @@ public class gameManager : MonoBehaviour {
 	//Find All Spawners in level
 	void AutoFindSpawns()
 	{
-		//eSpawners = GameObject.FindGameObjectsWithTag("Spawners");
+		eSpawners = GameObject.FindGameObjectsWithTag("Spawners");
 	}
 	//spawnEnemys it takes the level and give the enemies random stats based on the level number
 	void SpawnEnemy()
