@@ -1,8 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenuFunctions : MonoBehaviour {
+
+	/// <summary>
+	/// The pause menu Script.
+	/// Programmer: Caleb Dan Gammons
+	/// Date: 11/11/2017
+	/// Summary:
+	/// Given functions to operate the Pause Menu.
+	/// </summary>
 
     //Sets up objects for Pause Menu.
     public GameObject PauseMenuTitle;
@@ -18,7 +28,8 @@ public class PauseMenuFunctions : MonoBehaviour {
     //Sets up objects for Volume Menu
     public GameObject VolText;
 	public GameObject VolButton;
-    public GameObject VolSlider;
+    public Slider VolSlider;
+	public GameObject VolAct;
 
     //Sets up objects for Upgrade Menu
     public GameObject UpgradeMenuManager;
@@ -27,10 +38,14 @@ public class PauseMenuFunctions : MonoBehaviour {
     public GameObject UpgradeMenuExecute;
     public GameObject UpgradeMenuDescriptions;
 
+	//Volume Control Variables
+	//public float Volslider = 5.0f;
+
 
 	public void RetGame()
     {
         //Returns to game.
+		SceneManager.LoadScene(2);
 
     }
 
@@ -51,9 +66,15 @@ public class PauseMenuFunctions : MonoBehaviour {
 
 		//Turns on Vol Control
 		VolText.SetActive (true);
-		VolSlider.SetActive (true);
+		VolAct.SetActive (true);
 		VolButton.SetActive (true);
+
     }
+
+	public void Volume()
+	{
+		AudioListener.volume = VolSlider.value;
+	}
 
 	public void VolRet() 
 	{
@@ -61,7 +82,7 @@ public class PauseMenuFunctions : MonoBehaviour {
 
 		//Turns off Vol Control
 		VolText.SetActive (false);
-		VolSlider.SetActive (false);
+		VolAct.SetActive (false);
 		VolButton.SetActive (false);
 
 		//Turns on Pause Menu
@@ -126,7 +147,7 @@ public class PauseMenuFunctions : MonoBehaviour {
     public void RetMM()
     {
         //Returns to Main Menu.
-
+		SceneManager.LoadScene(0);
     }
 
 
