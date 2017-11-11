@@ -16,8 +16,12 @@ public class Enemy : MonoBehaviour {
 		pickups = GameObject.Find("Pickup Pool").GetComponent<ObjectPool>();
 	}
 
+	public void Damage(int dmg) {
+		health -= dmg;
+	}
+
 	void Update () {
-		if (health == 0 ) {
+		if (health <= 0 ) {
 			isAlive = false;
 		}
 		if (!isAlive) {
