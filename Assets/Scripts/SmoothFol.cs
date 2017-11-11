@@ -9,6 +9,7 @@ public class SmoothFol : MonoBehaviour {
 	public float thrust;
 	public Rigidbody rb;
 
+	//private GameLoop gameloop = GameObject.Find("GM").GetComponent <GameLoop> ();
 	void Start () {
 		findPlant();
 		rb = GetComponent<Rigidbody>();
@@ -26,5 +27,15 @@ public class SmoothFol : MonoBehaviour {
 	void FixedUpdate()
 	{
 		rb.AddForce(transform.forward * thrust);
+	}
+
+	void OnTriggerEnter (Collider collision)
+	{
+		// Put a particle effect here
+		if(collision.gameObject.tag == "Plant")
+		{
+			GetComponent<Enemy>().health=0;
+		}
+
 	}
 }
