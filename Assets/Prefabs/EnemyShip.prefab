@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 23425697196754470}
   - component: {fileID: 54354018450125726}
   - component: {fileID: 114197396455243934}
-  - component: {fileID: 114706889328635962}
+  - component: {fileID: 114080677144854848}
   m_Layer: 8
   m_Name: EnemyShip
   m_TagString: Untagged
@@ -111,6 +111,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114080677144854848
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1587968708244450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 893ded37cde7e4f1689fb00bd790a46b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plant: {fileID: 0}
+  target: {fileID: 0}
+  thrust: 5
+  rb: {fileID: 0}
 --- !u!114 &114197396455243934
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -125,21 +140,3 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   isAlive: 0
---- !u!114 &114706889328635962
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1587968708244450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5092bdd70f3bf453f9412354bc614516, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  distance: 3
-  height: 3
-  damping: 5
-  smoothRotation: 1
-  followBehind: 1
-  rotationDamping: 10
