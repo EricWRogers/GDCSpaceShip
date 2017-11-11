@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Raygun : MonoBehaviour {
 
-	public int dmg = 0;
+	public int dmg = 1;
+	ParticleSystem prt;
 	ParticleSystem.EmissionModule em;
 
 	void Start () {
-		em = gameObject.GetComponent<ParticleSystem>().emission;
+		prt = gameObject.GetComponent<ParticleSystem>();
+		em = prt.emission;
 	}
 
 	void Update () {
@@ -17,4 +19,12 @@ public class Raygun : MonoBehaviour {
 			em.enabled = true;
 		} 
 	}
+
+	void OnParticleCollision(GameObject other)
+    {
+    	Enemy e = other.GetComponent<Enemy>();
+    	if (e) {
+    		e.Damage(dmg);
+    	}
+    }
 }
