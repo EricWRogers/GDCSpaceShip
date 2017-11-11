@@ -8,7 +8,7 @@ public class ObjectPool : MonoBehaviour {
 	public int poolSize = 10; //Initial size of the pool
 	public bool expand = false; //Do we want to create new objects and expand the pool if we run out of objects in the pool?
 
-	List<GameObject> pool; //The list of objects in the pool
+	public List<GameObject> pool; //The list of objects in the pool
 
 	void Start () {
 		pool = new List<GameObject>();

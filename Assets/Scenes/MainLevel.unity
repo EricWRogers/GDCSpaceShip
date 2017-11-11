@@ -245,6 +245,24 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9db8efe8cda7c1344b481ff1263eaf11, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &362562661 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1983615564929612, guid: 9db8efe8cda7c1344b481ff1263eaf11,
+    type: 2}
+  m_PrefabInternal: {fileID: 362562660}
+--- !u!114 &362562662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 362562661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29c788df17bbf8c4ca6ac58e7f8d885a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cd: 180
+  rocket: {fileID: 1700323058012560, guid: 6074f61d59306df458796976cfacd2a6, type: 2}
 --- !u!1 &421394756
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,6 +293,7 @@ MonoBehaviour:
   poolObject: {fileID: 1646090192094702, guid: bc51c425e1792cc4c8404ab21978db55, type: 2}
   poolSize: 10
   expand: 1
+  pool: []
 --- !u!4 &421394758
 Transform:
   m_ObjectHideFlags: 0
@@ -404,6 +423,7 @@ MonoBehaviour:
   poolObject: {fileID: 1587968708244450, guid: 8f721cd7a493ed548948e6a3c308e39b, type: 2}
   poolSize: 10
   expand: 0
+  pool: []
 --- !u!4 &2108097238
 Transform:
   m_ObjectHideFlags: 0
