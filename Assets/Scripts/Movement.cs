@@ -21,14 +21,18 @@ public class Movement : MonoBehaviour {
 
 	public GameObject holder;
 
+	PlayerHealth health;
+
 	void Start () {
 		Cursor.lockState = CursorLockMode.Confined;
 		rb = gameObject.GetComponent<Rigidbody>();
 		screenCenter = new Vector2(Screen.width/2, Screen.height/2);
 		if (Screen.width > Screen.height) { maxSDisp = Screen.height/2; } else { maxSDisp = Screen.width/2; }
+		health = gameObject.GetComponent<PlayerHealth>();
 	}
 
 	void FixedUpdate () {
+		if (health.isAlive) {
 		// Pitch/roll/yaw rotation
 		float angle = Mathf.Atan2(screenCenter.y-Input.mousePosition.y,screenCenter.x-Input.mousePosition.x);
 		float disp = Vector2.Distance(screenCenter, new Vector2(Input.mousePosition.x, Input.mousePosition.y));
@@ -55,7 +59,7 @@ public class Movement : MonoBehaviour {
 		Vector3 force = transform.forward * accel;
 		rb.AddForce(force);
 		rb.velocity = transform.forward * Mathf.Clamp(rb.velocity.magnitude, 0, maxSpeed);
-
+		}
 
 	}
 }
