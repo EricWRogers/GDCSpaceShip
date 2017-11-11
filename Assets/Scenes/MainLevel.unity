@@ -317,6 +317,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 2a336827f759aab46b3e3a9219ed85bf, type: 3}
+      propertyPath: m_TagString
+      value: Plant
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2a336827f759aab46b3e3a9219ed85bf, type: 3}
   m_IsPrefabParent: 0

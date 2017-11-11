@@ -37,13 +37,13 @@ public class Movement : MonoBehaviour {
 			if (Mathf.Abs(disp) < 100) { disp = 0; }
 			rb.angularVelocity = new Vector3(rb.angularVelocity.normalized.x, rb.angularVelocity.normalized.y, 0) * Mathf.Lerp(0, maxRotSpeed, disp) + new Vector3(0,0,Input.GetAxis("Roll"));
 		} else {
-			rb.angularVelocity = new Vector3(0,0,Input.GetAxis("Roll"));
+			rb.angularVelocity = new Vector3(0,0,Input.GetAxis("Horizontal"));
 		}
 		if (Input.GetKeyDown("space")) {
 			move = !move;
 		}
 		// Forward/reverse thrust
-		accel += Input.GetAxis("Thrust") * accelRate;
+		accel += Input.GetAxis("Vertical") * accelRate;
 		accel = Mathf.Clamp(accel, minAccel, maxAccel);
 		Vector3 force = transform.forward * accel;
 		rb.AddForce(force);
