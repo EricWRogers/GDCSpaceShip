@@ -46,8 +46,7 @@ public class Movement : MonoBehaviour {
 		} else {
 			float rotSpeed = maxRotSpeed*(Vector2.Distance(screenCenter, new Vector2(Input.mousePosition.x, Input.mousePosition.y))/maxSDisp);
 			Vector3 desRot = new Vector3(rotSpeed*Mathf.Sin(angle), -rotSpeed*Mathf.Cos(angle),0);
-			if (Mathf.Abs(disp) < 20) { disp = 0; }
-			holder.transform.localRotation = Quaternion.Euler(holder.transform.localRotation.eulerAngles + (desRot * Mathf.Lerp(0, maxRotSpeed, disp)));
+			holder.transform.localRotation = Quaternion.Slerp(holder.transform.localRotation, Quaternion.Euler(desRot), maxRotSpeed * Time.deltaTime);
 			rb.angularVelocity = new Vector3(0,0,Input.GetAxis("Horizontal"));
 		}
 		if (Input.GetKeyDown("space")) {
