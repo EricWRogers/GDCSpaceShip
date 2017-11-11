@@ -37,7 +37,7 @@ public class Movement : MonoBehaviour {
 			rb.AddRelativeTorque(desRot);
 			float disp = Vector2.Distance(screenCenter, new Vector2(Input.mousePosition.x, Input.mousePosition.y));
 			if (Mathf.Abs(disp) < 50) { disp = 0; }
-			rb.angularVelocity = new Vector3(rb.angularVelocity.normalized.x, rb.angularVelocity.normalized.y, 0) * Mathf.Lerp(0, maxRotSpeed, disp) + new Vector3(0,0,Input.GetAxis("Roll"));
+			rb.angularVelocity = new Vector3(rb.angularVelocity.normalized.x, rb.angularVelocity.normalized.y, 0) * Mathf.Lerp(0, maxRotSpeed, disp) + new Vector3(0,0,Input.GetAxis("Horizontal"));
 			holder.transform.localRotation = Quaternion.Euler(new Vector3(0,0,0));
 		} else {
 			float rotSpeed = maxRotSpeed*(Vector2.Distance(screenCenter, new Vector2(Input.mousePosition.x, Input.mousePosition.y))/maxSDisp);
@@ -45,13 +45,13 @@ public class Movement : MonoBehaviour {
 			float disp = Vector2.Distance(screenCenter, new Vector2(Input.mousePosition.x, Input.mousePosition.y));
 			if (Mathf.Abs(disp) < 50) { disp = 0; }
 			holder.transform.localRotation = Quaternion.Euler(holder.transform.localRotation.eulerAngles + (desRot * Mathf.Lerp(0, maxRotSpeed, disp)));
-			rb.angularVelocity = new Vector3(0,0,Input.GetAxis("Roll"));
+			rb.angularVelocity = new Vector3(0,0,Input.GetAxis("Horizontal"));
 		}
 		if (Input.GetKeyDown("space")) {
 			move = !move;
 		}
 		// Forward/reverse thrust
-		accel += Input.GetAxis("Thrust") * accelRate;
+		accel += Input.GetAxis("Vertical") * accelRate;
 		accel = Mathf.Clamp(accel, minAccel, maxAccel);
 		Vector3 force = transform.forward * accel;
 		rb.AddForce(force);
