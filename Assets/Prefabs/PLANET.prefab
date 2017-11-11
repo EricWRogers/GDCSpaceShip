@@ -22,9 +22,10 @@ GameObject:
   - component: {fileID: 33136152432089162}
   - component: {fileID: 23936796652826188}
   - component: {fileID: 114423093847799382}
+  - component: {fileID: 135464561413930034}
   m_Layer: 0
   m_Name: PLANET
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,4 +97,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04e79ccd0df8ad4382f31a71bf1796d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateSpeed: 0.05
+  rotateSpeed: 0.1
+--- !u!135 &135464561413930034
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1500191964952340}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.10771036
+  m_Center: {x: -0.00050036237, y: -0.00021475938, z: 0.0008764568}
