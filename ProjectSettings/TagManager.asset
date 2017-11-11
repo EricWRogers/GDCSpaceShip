@@ -16,6 +16,7 @@ TagManager:
   - 10
   - Plant
   - eSpawners
+  - Enemy Manager
   layers:
   - Default
   - TransparentFX
