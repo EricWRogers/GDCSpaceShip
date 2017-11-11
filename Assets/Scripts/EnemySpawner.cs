@@ -39,10 +39,17 @@ public class EnemySpawner : MonoBehaviour {
 				enemy.transform.position = new Vector3(enemy.transform.position.x * swapX, enemy.transform.position.y * swapY, enemy.transform.position.z * swapZ); //And the inverting of coordinates that we got randomly
 
 				//Set up what we need for the enemy here
-				EnemyStats eStats = enemy.GetComponent<EnemyStats>();
+				enemy.transform.LookAt(Vector3.zero);
+				Enemy eStats = enemy.GetComponent<Enemy>();
 				eStats.isAlive = true;
 				eStats.health = eStats.maxHealth;
+				Rigidbody eRB = enemy.GetComponent<Rigidbody>(); //We don't want the enemy to start off moving
+				eRB.velocity = Vector3.zero;
+				eRB.angularVelocity = Vector3.zero;
+
 				enemy.SetActive(true);
+
+
 			} else {
 				maxEnemies = currentEnemies;
 			}

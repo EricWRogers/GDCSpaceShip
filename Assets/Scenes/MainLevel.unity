@@ -215,6 +215,49 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9db8efe8cda7c1344b481ff1263eaf11, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &421394756
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 421394758}
+  - component: {fileID: 421394757}
+  m_Layer: 0
+  m_Name: Pickup Pool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &421394757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 421394756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4da086b4cd7188c44a1ce5aa069cafcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolObject: {fileID: 1646090192094702, guid: bc51c425e1792cc4c8404ab21978db55, type: 2}
+  poolSize: 10
+  expand: 1
+--- !u!4 &421394758
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 421394756}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1623445320
 Prefab:
   m_ObjectHideFlags: 0
@@ -257,6 +300,25 @@ Prefab:
     - target: {fileID: 100000, guid: 2a336827f759aab46b3e3a9219ed85bf, type: 3}
       propertyPath: m_TagString
       value: Plant
+      objectReference: {fileID: 0}
+    - target: {fileID: 23936796652826188, guid: 4a5ff5d7ddee85945a30b8fc35b23938,
+        type: 2}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23936796652826188, guid: 4a5ff5d7ddee85945a30b8fc35b23938,
+        type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500191964952340, guid: 4a5ff5d7ddee85945a30b8fc35b23938, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23936796652826188, guid: 4a5ff5d7ddee85945a30b8fc35b23938,
+        type: 2}
+      propertyPath: m_LightProbeUsage
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a5ff5d7ddee85945a30b8fc35b23938, type: 2}
