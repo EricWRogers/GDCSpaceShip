@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.7, g: 0.7, b: 0.7, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientIntensity: 5.81
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: a16a6a97bd286a142ad6ea98ee81025d, type: 2}
   m_HaloStrength: 0.5
@@ -212,6 +212,36 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 198189066276974776, guid: 9db8efe8cda7c1344b481ff1263eaf11,
+        type: 2}
+      propertyPath: randomSeed
+      value: -897899832
+      objectReference: {fileID: 0}
+    - target: {fileID: 198189066276974776, guid: 9db8efe8cda7c1344b481ff1263eaf11,
+        type: 2}
+      propertyPath: CollisionModule.collidesWith.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 198189066276974776, guid: 9db8efe8cda7c1344b481ff1263eaf11,
+        type: 2}
+      propertyPath: CollisionModule.m_Bounce.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114349329207481232, guid: 9db8efe8cda7c1344b481ff1263eaf11,
+        type: 2}
+      propertyPath: dmg
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198189066276974776, guid: 9db8efe8cda7c1344b481ff1263eaf11,
+        type: 2}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198189066276974776, guid: 9db8efe8cda7c1344b481ff1263eaf11,
+        type: 2}
+      propertyPath: CollisionModule.m_EnergyLossOnCollision.scalar
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9db8efe8cda7c1344b481ff1263eaf11, type: 2}
   m_IsPrefabParent: 0
@@ -320,6 +350,11 @@ Prefab:
       propertyPath: m_LightProbeUsage
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114423093847799382, guid: 4a5ff5d7ddee85945a30b8fc35b23938,
+        type: 2}
+      propertyPath: rotateSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a5ff5d7ddee85945a30b8fc35b23938, type: 2}
   m_IsPrefabParent: 0
@@ -354,7 +389,7 @@ MonoBehaviour:
   maxEnemies: 5
   currentEnemies: 0
   spawnDelay: 30
-  spawnRange: 30
+  spawnRange: 100
 --- !u!114 &2108097237
 MonoBehaviour:
   m_ObjectHideFlags: 0
