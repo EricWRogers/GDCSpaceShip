@@ -212,57 +212,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 198189066276974776, guid: 9db8efe8cda7c1344b481ff1263eaf11,
-        type: 2}
-      propertyPath: randomSeed
-      value: -897899832
-      objectReference: {fileID: 0}
-    - target: {fileID: 198189066276974776, guid: 9db8efe8cda7c1344b481ff1263eaf11,
-        type: 2}
-      propertyPath: CollisionModule.collidesWith.m_Bits
-      value: 256
-      objectReference: {fileID: 0}
-    - target: {fileID: 198189066276974776, guid: 9db8efe8cda7c1344b481ff1263eaf11,
-        type: 2}
-      propertyPath: CollisionModule.m_Bounce.scalar
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114349329207481232, guid: 9db8efe8cda7c1344b481ff1263eaf11,
-        type: 2}
-      propertyPath: dmg
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198189066276974776, guid: 9db8efe8cda7c1344b481ff1263eaf11,
-        type: 2}
-      propertyPath: CollisionModule.collisionMessages
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198189066276974776, guid: 9db8efe8cda7c1344b481ff1263eaf11,
-        type: 2}
-      propertyPath: CollisionModule.m_EnergyLossOnCollision.scalar
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9db8efe8cda7c1344b481ff1263eaf11, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &362562661 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1983615564929612, guid: 9db8efe8cda7c1344b481ff1263eaf11,
-    type: 2}
-  m_PrefabInternal: {fileID: 362562660}
---- !u!114 &362562662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 362562661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29c788df17bbf8c4ca6ac58e7f8d885a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cd: 180
-  rocket: {fileID: 1700323058012560, guid: 6074f61d59306df458796976cfacd2a6, type: 2}
 --- !u!1 &421394756
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,7 +259,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
 --- !u!1 &795305032
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,25 +321,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-=======
---- !u!1 &1578497094 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1500191964952340, guid: 4a5ff5d7ddee85945a30b8fc35b23938,
-    type: 2}
-  m_PrefabInternal: {fileID: 1623445320}
---- !u!135 &1578497095
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1578497094}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.10771035
-  m_Center: {x: -0.0005003623, y: -0.00021475936, z: 0.00087645673}
->>>>>>> Stashed changes
 --- !u!1001 &1623445320
 Prefab:
   m_ObjectHideFlags: 0
@@ -455,10 +387,6 @@ Prefab:
         type: 2}
       propertyPath: rotateSpeed
       value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1500191964952340, guid: 4a5ff5d7ddee85945a30b8fc35b23938, type: 2}
-      propertyPath: m_TagString
-      value: Plant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a5ff5d7ddee85945a30b8fc35b23938, type: 2}

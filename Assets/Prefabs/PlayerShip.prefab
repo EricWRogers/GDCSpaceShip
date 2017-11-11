@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 23192437353693612}
   - component: {fileID: 114226021435047900}
   - component: {fileID: 54183642268024936}
+  - component: {fileID: 114254762261404682}
   m_Layer: 0
   m_Name: PlayerShip
   m_TagString: Untagged
@@ -273,6 +274,19 @@ MonoBehaviour:
   maxSpeed: 10
   maxRotSpeed: 15
   holder: {fileID: 1558889497457926}
+--- !u!114 &114254762261404682
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1983615564929612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29c788df17bbf8c4ca6ac58e7f8d885a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cd: 180
+  rocket: {fileID: 1700323058012560, guid: 6074f61d59306df458796976cfacd2a6, type: 2}
 --- !u!114 &114349329207481232
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -284,7 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67ffd1255fdfe024bbe268f69af76c08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmg: 0
+  dmg: 1
 --- !u!124 &124097798966244300
 Behaviour:
   m_ObjectHideFlags: 1
@@ -351,7 +365,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 384813239
+  randomSeed: -897899832
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -2673,7 +2687,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -2714,7 +2728,7 @@ ParticleSystem:
     m_EnergyLossOnCollision:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -2757,11 +2771,11 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 256
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
