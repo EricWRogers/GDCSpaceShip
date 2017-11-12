@@ -35,7 +35,11 @@ public class HomingRocket : MonoBehaviour {
 	void Update() {
 		lifetime--;
 		float step = rotateSpeed * Time.deltaTime;
-		if (!target || !target.activeInHierarchy) {
+		if (target && !target.activeInHierarchy) {
+			target = null;
+		}
+		if (!target) {
+			Debug.Log("Need new target");
 			GetTarget();
 		}
 		if (target) {
