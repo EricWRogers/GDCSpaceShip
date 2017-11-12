@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HUD : MonoBehaviour {
-
+public class HUD : PlayerHealth {
 	public Text Score;
 	public Text Health;
 	public Text Material;
 	EnemySpawner manager;
+	PlayerHealth pStats;
 	public static HUD instance;
 	int score = 0;
-	int health = 0;
 	int numEnemies = 0;
 	bool Badwolf = false, Trouble = true;
 
@@ -24,12 +23,14 @@ public class HUD : MonoBehaviour {
 
 	void Start () {
 		Score.text = score.ToString();
+		Health.text = health.ToString ();
 		manager = GameObject.FindGameObjectWithTag("Enemy Manager").GetComponent<EnemySpawner>();
 		numEnemies = manager.maxEnemies;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		Health.text = health.ToString ();
 		
 		if (manager.currentEnemies != manager.maxEnemies && Trouble == true) {
 			Badwolf = false;
