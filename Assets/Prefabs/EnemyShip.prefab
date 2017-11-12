@@ -382,7 +382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plant: {fileID: 0}
   target: {fileID: 0}
-  thrust: 5
+  thrust: 3
   rb: {fileID: 0}
 --- !u!114 &114197396455243934
 MonoBehaviour:

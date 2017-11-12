@@ -63,7 +63,7 @@ public class HomingRocket : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 		if (other.gameObject.layer == LayerMask.NameToLayer("Enemy")) {
-			other.GetComponent<Enemy>().Damage(dmg);
+			other.GetComponent<Enemy>().Damage(dmg, true);
 			DestroyMissile();
 		}
 	}

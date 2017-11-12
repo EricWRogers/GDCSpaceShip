@@ -34,7 +34,7 @@ public class SmoothFol : MonoBehaviour {
 		// Put a particle effect here
 		if(collision.gameObject.tag == "Plant")
 		{
-			GetComponent<Enemy>().health=0;
+			GetComponent<Enemy>().Damage(GetComponent<Enemy>().maxHealth, false);
 		}
 
 	}

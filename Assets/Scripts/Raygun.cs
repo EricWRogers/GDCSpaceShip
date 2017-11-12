@@ -24,7 +24,7 @@ public class Raygun : MonoBehaviour {
     {
     	Enemy e = other.GetComponent<Enemy>();
     	if (e) {
-    		e.Damage(dmg);
+    		e.Damage(dmg, true);
     	}
     }
 }

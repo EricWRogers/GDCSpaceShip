@@ -11,12 +11,15 @@ public class Enemy : MonoBehaviour {
 	EnemySpawner manager;
 	ObjectPool pickups;
 
+	bool damageCausedByPlayer = false;
+
 	void Start () {
 		manager = GameObject.FindGameObjectWithTag("Enemy Manager").GetComponent<EnemySpawner>();
 		pickups = GameObject.Find("Pickup Pool").GetComponent<ObjectPool>();
 	}
 
-	public void Damage(int dmg) {
+	public void Damage(int dmg, bool plr) {
+		damageCausedByPlayer = plr;
 		health -= dmg;
 	}
 
@@ -25,12 +28,16 @@ public class Enemy : MonoBehaviour {
 			isAlive = false;
 		}
 		if (!isAlive) {
+			if (damageCausedByPlayer) {
+				GameObject pickup = pickups.GetFromPool();
+				pickup.SetActive(true);
+				pickup.GetComponent<Pickup>().RestartTimer();
+				pickup.transform.position = transform.position;
+			}
 			manager.currentEnemies--;
-			GameObject pickup = pickups.GetFromPool();
-			pickup.SetActive(true);
-			pickup.GetComponent<Pickup>().RestartTimer();
+			TrailRenderer tr = gameObject.GetComponentInChildren<TrailRenderer>();
+			tr.Clear();
 			gameObject.SetActive(false);
-			pickup.transform.position = transform.position;
 		}
 	}
 }

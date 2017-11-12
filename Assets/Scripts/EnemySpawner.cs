@@ -46,6 +46,8 @@ public class EnemySpawner : MonoBehaviour {
 				Rigidbody eRB = enemy.GetComponent<Rigidbody>(); //We don't want the enemy to start off moving
 				eRB.velocity = Vector3.zero;
 				eRB.angularVelocity = Vector3.zero;
+				TrailRenderer tr = enemy.GetComponentInChildren<TrailRenderer>();
+				tr.Clear();
 
 				enemy.SetActive(true);
 
