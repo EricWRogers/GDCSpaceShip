@@ -4,9 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-namespace PMManager{
 
-public class PM_Manager : MonoBehaviour {
+public class Upgrade_Manager : MonoBehaviour {
 		public Canvas TestCanvas;
 		public Image SpeedBar, DamageBar, AmorBar, DescBox,ArmorMask,DamageMask,SpeedMask,GreyLock;
 		public Text Description, ShipTitle, PlayerPoints, XP;
@@ -298,5 +297,5 @@ public class PM_Manager : MonoBehaviour {
 
 	}
 
-	}
+	
 }
